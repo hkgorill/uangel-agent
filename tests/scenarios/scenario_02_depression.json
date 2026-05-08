@@ -1,0 +1,14 @@
+{
+  "description": "우울 감지 시나리오",
+  "input": {
+    "user_id": "elder_002",
+    "timestamp": "2026-05-08T14:30:00",
+    "emotion_vector": {"sadness": 0.85, "loneliness": 0.7, "anxiety": 0.3, "calm": 0.05, "joy": 0.0},
+    "memory_data": {"recent_topics": ["날씨"], "rapport_score": 0.5, "last_positive_response": null},
+    "bio_data": {"heart_rate": 65, "no_movement_minutes": 90, "fall_detected": false},
+    "env_data": {"time_of_day": "afternoon", "weather": "cloudy", "location": "home"},
+    "crisis_flags": {"crisis_utterance": false, "sos_activated": false, "isolation_risk_score": 0.4}
+  },
+  "expected_component": "empathy_dialog",
+  "expected_mode": "score"
+}

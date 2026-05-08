@@ -1,0 +1,14 @@
+{
+  "description": "외로움 표현 시나리오",
+  "input": {
+    "user_id": "elder_003",
+    "timestamp": "2026-05-08T15:00:00",
+    "emotion_vector": {"sadness": 0.4, "loneliness": 0.9, "anxiety": 0.2, "calm": 0.1, "joy": 0.0},
+    "memory_data": {"recent_topics": ["손녀", "아들"], "rapport_score": 0.7, "last_positive_response": "family_contact"},
+    "bio_data": {"heart_rate": 70, "no_movement_minutes": 60, "fall_detected": false},
+    "env_data": {"time_of_day": "afternoon", "weather": "sunny", "location": "home"},
+    "crisis_flags": {"crisis_utterance": false, "sos_activated": false, "isolation_risk_score": 0.5}
+  },
+  "expected_component": "family_contact",
+  "expected_mode": "score"
+}

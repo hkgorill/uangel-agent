@@ -1,0 +1,11 @@
+langchain==0.3.25
+langchain-google-genai>=2.0.0
+google-genai
+fastapi
+uvicorn
+python-dotenv
+numpy
+requests
+sqlalchemy
+pytest
+httpx

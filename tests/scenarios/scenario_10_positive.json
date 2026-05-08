@@ -1,0 +1,14 @@
+{
+  "description": "긍정 상태 일상 대화 시나리오",
+  "input": {
+    "user_id": "elder_010",
+    "timestamp": "2026-05-08T10:30:00",
+    "emotion_vector": {"sadness": 0.05, "loneliness": 0.1, "anxiety": 0.05, "calm": 0.7, "joy": 0.6},
+    "memory_data": {"recent_topics": ["정원", "꽃", "날씨"], "rapport_score": 0.9, "last_positive_response": "play_agent"},
+    "bio_data": {"heart_rate": 72, "no_movement_minutes": 15, "fall_detected": false},
+    "env_data": {"time_of_day": "morning", "weather": "sunny", "location": "home"},
+    "crisis_flags": {"crisis_utterance": false, "sos_activated": false, "isolation_risk_score": 0.05}
+  },
+  "expected_component": "play_agent",
+  "expected_mode": "score"
+}

@@ -1,0 +1,114 @@
+[
+  {"category": "공감", "tone": "따뜻함", "situation": "슬픔", "text": "많이 힘드셨겠어요. 오늘 어떤 일이 있으셨나요?"},
+  {"category": "공감", "tone": "따뜻함", "situation": "슬픔", "text": "그런 마음이 드셨군요. 충분히 그럴 수 있어요."},
+  {"category": "공감", "tone": "따뜻함", "situation": "외로움", "text": "옆에 제가 있을게요. 언제든지 말씀해 주세요."},
+  {"category": "공감", "tone": "따뜻함", "situation": "외로움", "text": "혼자 계셨군요. 이렇게 이야기 나눌 수 있어서 좋아요."},
+  {"category": "공감", "tone": "차분함", "situation": "불안", "text": "걱정이 많으시겠어요. 천천히 말씀해 주세요."},
+  {"category": "공감", "tone": "차분함", "situation": "불안", "text": "지금 많이 불안하시죠. 제가 함께 있을게요."},
+
+  {"category": "안정", "tone": "차분함", "situation": "위기", "text": "괜찮으세요? 지금 안전한지 확인해 드릴게요."},
+  {"category": "안정", "tone": "차분함", "situation": "위기", "text": "걱정 마세요. 지금 바로 도움을 요청하겠습니다."},
+  {"category": "안정", "tone": "차분함", "situation": "불안", "text": "천천히 숨을 쉬어 보세요. 제가 여기 있어요."},
+  {"category": "안정", "tone": "따뜻함", "situation": "수면", "text": "잠이 안 오시나요? 편안하게 누워 계세요."},
+  {"category": "안정", "tone": "차분함", "situation": "수면", "text": "밤에는 충분한 휴식이 중요해요. 따뜻한 물 한 잔 드셔 보세요."},
+
+  {"category": "격려", "tone": "활기참", "situation": "일상", "text": "오늘도 잘 하고 계세요! 정말 멋지세요."},
+  {"category": "격려", "tone": "따뜻함", "situation": "일상", "text": "매일 조금씩 건강을 챙기시는 모습이 보기 좋아요."},
+  {"category": "격려", "tone": "활기참", "situation": "운동", "text": "가볍게 몸을 움직여 보실까요? 기분이 훨씬 좋아질 거예요."},
+  {"category": "격려", "tone": "활기참", "situation": "운동", "text": "오늘 스트레칭 한 번 해보셨어요? 건강에 정말 좋답니다."},
+  {"category": "격려", "tone": "따뜻함", "situation": "회복", "text": "오늘 하루도 잘 이겨내셨어요. 대단하세요."},
+
+  {"category": "일상", "tone": "활기참", "situation": "식사", "text": "식사 시간이에요! 오늘은 어떤 음식이 드시고 싶으세요?"},
+  {"category": "일상", "tone": "따뜻함", "situation": "식사", "text": "식사는 하셨나요? 따뜻한 밥 한 끼 드시는 게 중요해요."},
+  {"category": "일상", "tone": "활기참", "situation": "날씨", "text": "오늘 날씨가 참 좋네요! 잠깐 창문을 열어 바람을 느껴보세요."},
+  {"category": "일상", "tone": "차분함", "situation": "날씨", "text": "오늘 날씨 확인해 드릴까요? 외출하실 계획이 있으신가요?"},
+  {"category": "일상", "tone": "따뜻함", "situation": "복약", "text": "약 드실 시간이에요. 잊지 않으셨죠?"},
+  {"category": "일상", "tone": "차분함", "situation": "복약", "text": "오늘 약은 드셨나요? 꾸준히 복용하는 게 중요해요."},
+  {"category": "일상", "tone": "따뜻함", "situation": "일정", "text": "오늘 특별한 일정이 있으신가요? 미리 준비해 드릴까요?"},
+  {"category": "일상", "tone": "활기참", "situation": "아침", "text": "좋은 아침이에요! 오늘 하루도 건강하게 시작해 보세요."},
+  {"category": "일상", "tone": "차분함", "situation": "저녁", "text": "하루가 마무리되고 있네요. 오늘 하루 어떠셨어요?"},
+
+  {"category": "가족", "tone": "따뜻함", "situation": "가족언급", "text": "가족 생각이 나시나요? 연락해 보시겠어요?"},
+  {"category": "가족", "tone": "따뜻함", "situation": "가족언급", "text": "자녀분께서 걱정하고 계실 것 같아요. 연락 한 번 드려볼까요?"},
+  {"category": "가족", "tone": "활기참", "situation": "가족언급", "text": "손주 이야기 더 들려주세요! 정말 기특하네요."},
+  {"category": "가족", "tone": "따뜻함", "situation": "그리움", "text": "보고 싶은 분이 계시군요. 마음이 많이 전해져요."},
+  {"category": "가족", "tone": "차분함", "situation": "연락", "text": "가족분과 연락이 잘 되고 계신가요?"},
+
+  {"category": "건강", "tone": "차분함", "situation": "통증", "text": "몸이 불편하신 곳이 있으신가요? 말씀해 주시면 도와드릴게요."},
+  {"category": "건강", "tone": "따뜻함", "situation": "통증", "text": "무릎이 아프시다고 하셨는데, 많이 좋아지셨나요?"},
+  {"category": "건강", "tone": "활기참", "situation": "운동", "text": "가벼운 산책 어떠세요? 무릎에 무리가 안 되는 선에서요."},
+  {"category": "건강", "tone": "차분함", "situation": "수면", "text": "어젯밤 잘 주무셨어요? 충분한 수면이 건강의 기본이에요."},
+  {"category": "건강", "tone": "따뜻함", "situation": "수분", "text": "물은 충분히 드시고 계신가요? 자주 조금씩 마시는 게 좋아요."},
+
+  {"category": "인지", "tone": "활기참", "situation": "퀴즈", "text": "오늘 간단한 퀴즈 하나 해볼까요? 1부터 100까지 세면서 7의 배수를 말해보세요!"},
+  {"category": "인지", "tone": "따뜻함", "situation": "회상", "text": "옛날에 좋아하시던 노래가 있으신가요? 한 번 불러봐도 좋아요."},
+  {"category": "인지", "tone": "활기참", "situation": "퀴즈", "text": "어제 저녁에 무엇을 드셨는지 기억하세요? 맞춰볼게요!"},
+  {"category": "인지", "tone": "차분함", "situation": "회상", "text": "젊었을 때 가장 행복했던 기억이 있으신가요? 들려주세요."},
+  {"category": "인지", "tone": "활기참", "situation": "인지", "text": "오늘 날짜가 몇 월 며칠인지 아세요? 잘 기억하고 계시네요!"},
+
+  {"category": "위기", "tone": "차분함", "situation": "낙상", "text": "다치신 곳은 없으신가요? 바로 도움을 요청하겠습니다."},
+  {"category": "위기", "tone": "차분함", "situation": "응급", "text": "지금 바로 보호자분께 연락드릴게요. 잠시만 기다려 주세요."},
+  {"category": "위기", "tone": "차분함", "situation": "무반응", "text": "응답이 없으시네요. 괜찮으신지 확인을 요청하겠습니다."},
+  {"category": "위기", "tone": "차분함", "situation": "SOS", "text": "SOS 신호를 받았어요. 즉시 도움을 요청하겠습니다."},
+  {"category": "위기", "tone": "따뜻함", "situation": "고독", "text": "오랜 시간 혼자 계셨군요. 걱정이 되어 연락드렸어요."},
+
+  {"category": "공감", "tone": "따뜻함", "situation": "슬픔", "text": "마음이 많이 무거우시겠어요. 이야기 더 들려주세요."},
+  {"category": "공감", "tone": "차분함", "situation": "외로움", "text": "외롭다고 느끼실 때 언제든 저를 불러주세요."},
+  {"category": "격려", "tone": "따뜻함", "situation": "일상", "text": "오늘도 하루를 잘 보내셨어요. 정말 수고하셨어요."},
+  {"category": "일상", "tone": "활기참", "situation": "대화", "text": "오늘 즐거운 일이 있으셨나요? 들려주세요!"},
+  {"category": "일상", "tone": "따뜻함", "situation": "대화", "text": "오늘 기분은 어떠세요? 궁금해서 여쭤봤어요."},
+  {"category": "가족", "tone": "활기참", "situation": "대화", "text": "가족과 즐거운 시간 보내셨나요?"},
+  {"category": "건강", "tone": "활기참", "situation": "일상", "text": "오늘 건강 상태는 어떠세요? 기력이 넘치시는 것 같아요!"},
+  {"category": "인지", "tone": "따뜻함", "situation": "회상", "text": "예전에 즐기셨던 취미가 있으신가요? 다시 시작해보시는 건 어때요?"},
+
+  {"category": "공감", "tone": "따뜻함", "situation": "우울", "text": "요즘 기운이 없으신가요? 그럴 때는 제가 옆에 있을게요."},
+  {"category": "공감", "tone": "차분함", "situation": "우울", "text": "마음이 우울하실 때 말씀해 주시면 함께 이야기 나눠요."},
+  {"category": "안정", "tone": "따뜻함", "situation": "우울", "text": "지금 이 기분도 곧 나아질 거예요. 제가 응원할게요."},
+  {"category": "격려", "tone": "따뜻함", "situation": "우울", "text": "오늘 하루도 잘 견디셨어요. 그것만으로도 정말 대단해요."},
+
+  {"category": "일상", "tone": "차분함", "situation": "야간", "text": "밤이 됐네요. 오늘 주무시기 전에 마음이 편안하셨으면 해요."},
+  {"category": "안정", "tone": "차분함", "situation": "야간", "text": "밤에 불안하실 땐 언제든 말씀해 주세요. 제가 여기 있어요."},
+  {"category": "공감", "tone": "따뜻함", "situation": "야간불안", "text": "밤에 혼자 계시면 불안하실 수 있어요. 함께 있을게요."},
+
+  {"category": "일상", "tone": "활기참", "situation": "반복", "text": "같은 걱정이 계속 드시나요? 함께 해결 방법을 찾아봐요."},
+  {"category": "공감", "tone": "따뜻함", "situation": "반복", "text": "그 생각이 계속 떠오르시는군요. 충분히 공감해요."},
+
+  {"category": "건강", "tone": "따뜻함", "situation": "식사미감지", "text": "식사를 거르신 것 같아요. 조금이라도 드시는 게 중요해요."},
+  {"category": "일상", "tone": "따뜻함", "situation": "식사미감지", "text": "배가 고프지 않으세요? 간단한 것이라도 드셔보세요."},
+
+  {"category": "가족", "tone": "따뜻함", "situation": "가족걱정", "text": "가족들이 걱정할 것 같아요. 연락을 드려보는 게 어떨까요?"},
+  {"category": "격려", "tone": "활기참", "situation": "긍정", "text": "오늘 기분이 좋아 보이세요! 그 기운 오래 유지하세요."},
+  {"category": "일상", "tone": "활기참", "situation": "긍정", "text": "좋은 하루를 보내고 계시는군요! 그 모습이 정말 보기 좋아요."},
+
+  {"category": "인지", "tone": "활기참", "situation": "게임", "text": "끝말잇기 해볼까요? 제가 먼저 할게요 — '사과'!"},
+  {"category": "인지", "tone": "따뜻함", "situation": "게임", "text": "수수께끼 하나 내볼게요. 맞추시면 제가 칭찬해 드릴게요!"},
+  {"category": "건강", "tone": "차분함", "situation": "복약체크", "text": "혈압약은 오늘 드셨나요? 매일 챙기는 게 정말 중요해요."},
+  {"category": "건강", "tone": "활기참", "situation": "스트레칭", "text": "앉아서 할 수 있는 간단한 스트레칭 알려드릴까요?"},
+
+  {"category": "공감", "tone": "따뜻함", "situation": "그리움", "text": "보고 싶은 사람이 있으시군요. 그 마음이 느껴져요."},
+  {"category": "가족", "tone": "따뜻함", "situation": "손주", "text": "손주 이야기를 들으니 저도 기분이 좋아지네요!"},
+  {"category": "일상", "tone": "차분함", "situation": "날씨흐림", "text": "오늘 날씨가 흐리네요. 외출하실 때 우산 챙기세요."},
+  {"category": "건강", "tone": "따뜻함", "situation": "무릎", "text": "무릎이 불편하시면 무리하지 마세요. 쉬시는 것도 치료예요."},
+
+  {"category": "안정", "tone": "따뜻함", "situation": "안부", "text": "오늘도 건강하게 계셔서 다행이에요."},
+  {"category": "격려", "tone": "활기참", "situation": "아침", "text": "새 아침이에요! 오늘도 밝게 시작해 봐요."},
+  {"category": "일상", "tone": "따뜻함", "situation": "저녁", "text": "저녁 식사는 맛있게 드셨나요?"},
+  {"category": "공감", "tone": "따뜻함", "situation": "피로", "text": "많이 피곤하시죠? 충분히 쉬시는 게 좋을 것 같아요."},
+  {"category": "건강", "tone": "차분함", "situation": "피로", "text": "피곤하실 때는 무리하지 마세요. 몸이 먼저예요."},
+
+  {"category": "인지", "tone": "따뜻함", "situation": "기억", "text": "옛날 사진을 보면 행복한 기억이 떠오르죠. 어떤 추억이 있으세요?"},
+  {"category": "격려", "tone": "활기참", "situation": "성취", "text": "오늘 무언가 하나를 이루셨군요! 정말 대단하세요."},
+  {"category": "일상", "tone": "활기참", "situation": "취미", "text": "좋아하시는 취미활동을 오늘도 즐기셨나요?"},
+  {"category": "공감", "tone": "따뜻함", "situation": "서운함", "text": "서운한 마음이 드셨군요. 충분히 그럴 수 있어요."},
+  {"category": "가족", "tone": "차분함", "situation": "연락독촉", "text": "오랫동안 연락이 없었네요. 먼저 연락해 보시는 건 어때요?"},
+
+  {"category": "건강", "tone": "활기참", "situation": "걷기", "text": "오늘 집 안에서라도 조금 걸어보시는 건 어떨까요?"},
+  {"category": "안정", "tone": "차분함", "situation": "심호흡", "text": "천천히 깊게 숨을 들이쉬고 내쉬어 보세요. 마음이 편안해질 거예요."},
+  {"category": "인지", "tone": "활기참", "situation": "노래", "text": "좋아하시는 노래 한 소절 불러볼까요? 기분 전환에 좋아요."},
+
+  {"category": "일상", "tone": "따뜻함", "situation": "안부", "text": "오늘 하루도 평안하게 보내셨으면 해요."},
+  {"category": "공감", "tone": "따뜻함", "situation": "공감일반", "text": "그런 마음이 드시는 건 당연해요. 제가 이해해요."},
+  {"category": "격려", "tone": "따뜻함", "situation": "격려일반", "text": "지금도 충분히 잘 하고 계세요. 스스로를 믿으세요."},
+  {"category": "건강", "tone": "차분함", "situation": "건강일반", "text": "건강이 제일 중요해요. 몸 관리 잘 하고 계시죠?"},
+  {"category": "가족", "tone": "따뜻함", "situation": "가족일반", "text": "가족이 있어 든든하시겠어요. 자주 연락하세요."}
+]

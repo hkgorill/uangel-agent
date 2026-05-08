@@ -1,0 +1,14 @@
+{
+  "description": "낙상 감지 시나리오",
+  "input": {
+    "user_id": "elder_001",
+    "timestamp": "2026-05-08T10:00:00",
+    "emotion_vector": {"sadness": 0.3, "loneliness": 0.2, "anxiety": 0.8, "calm": 0.1, "joy": 0.0},
+    "memory_data": {"recent_topics": ["무릎 통증"], "rapport_score": 0.6, "last_positive_response": null},
+    "bio_data": {"heart_rate": 95, "no_movement_minutes": 0, "fall_detected": true},
+    "env_data": {"time_of_day": "morning", "weather": "sunny", "location": "home"},
+    "crisis_flags": {"crisis_utterance": false, "sos_activated": false, "isolation_risk_score": 0.2}
+  },
+  "expected_component": "anomaly_detection",
+  "expected_mode": "rule"
+}

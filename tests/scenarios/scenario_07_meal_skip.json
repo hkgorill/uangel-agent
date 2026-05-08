@@ -1,0 +1,14 @@
+{
+  "description": "식사 미감지 시나리오",
+  "input": {
+    "user_id": "elder_007",
+    "timestamp": "2026-05-08T13:00:00",
+    "emotion_vector": {"sadness": 0.3, "loneliness": 0.3, "anxiety": 0.2, "calm": 0.4, "joy": 0.1},
+    "memory_data": {"recent_topics": ["밥", "식욕"], "rapport_score": 0.65, "last_positive_response": null},
+    "bio_data": {"heart_rate": 72, "no_movement_minutes": 30, "fall_detected": false},
+    "env_data": {"time_of_day": "afternoon", "weather": "sunny", "location": "home"},
+    "crisis_flags": {"crisis_utterance": false, "sos_activated": false, "isolation_risk_score": 0.2}
+  },
+  "expected_component": "meal_guide",
+  "expected_mode": "score"
+}

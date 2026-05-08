@@ -1,0 +1,14 @@
+{
+  "description": "야간 불안 시나리오",
+  "input": {
+    "user_id": "elder_004",
+    "timestamp": "2026-05-08T02:00:00",
+    "emotion_vector": {"sadness": 0.3, "loneliness": 0.4, "anxiety": 0.85, "calm": 0.05, "joy": 0.0},
+    "memory_data": {"recent_topics": ["잠", "꿈"], "rapport_score": 0.6, "last_positive_response": null},
+    "bio_data": {"heart_rate": 88, "no_movement_minutes": 30, "fall_detected": false},
+    "env_data": {"time_of_day": "night", "weather": "cloudy", "location": "home"},
+    "crisis_flags": {"crisis_utterance": false, "sos_activated": false, "isolation_risk_score": 0.3}
+  },
+  "expected_component": "stabilization",
+  "expected_mode": "score"
+}
