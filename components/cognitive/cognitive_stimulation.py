@@ -16,11 +16,23 @@ class CognitiveStimulation(BaseComponent):
         return self._build_result(utterance)
 
     def get_score_factors(self, context: dict) -> dict:
-        rapport = context.get("memory_data", {}).get("rapport_score", 0.5)
+        mem = context.get("memory_data", {})
+        rapport = mem.get("rapport_score", 0.5)
+        last_positive = mem.get("last_positive_response", "")
+        topics = mem.get("recent_topics", [])
+        _COGNITIVE_KEYWORDS = ["옛날 노래", "추억", "퀴즈", "기억", "노래", "옛날"]
+        has_topics = any(kw in t for kw in _COGNITIVE_KEYWORDS for t in topics)
         tod = context.get("env_data", {}).get("time_of_day", "afternoon")
         env_suitability = 0.8 if tod in ("morning", "afternoon") else 0.3
+        emotion_match = 0.5
+        memory_relevance = round(rapport, 3)
+        if last_positive == "cognitive_stimulation":
+            memory_relevance = min(1.0, rapport + 0.15)
+            emotion_match = 0.65
+        if has_topics:
+            memory_relevance = min(1.0, memory_relevance + 0.1)
         return {
-            "emotion_match": 0.5,
-            "memory_relevance": round(rapport, 3),
+            "emotion_match": round(emotion_match, 3),
+            "memory_relevance": round(memory_relevance, 3),
             "env_suitability": env_suitability,
         }

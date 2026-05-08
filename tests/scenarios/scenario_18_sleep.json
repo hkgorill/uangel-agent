@@ -1,0 +1,14 @@
+{
+  "description": "야간 수면 이상 시나리오",
+  "input": {
+    "user_id": "elder_018",
+    "timestamp": "2026-05-09T01:30:00",
+    "emotion_vector": {"sadness": 0.3, "loneliness": 0.3, "anxiety": 0.7, "calm": 0.1, "joy": 0.0},
+    "memory_data": {"recent_topics": ["잠", "꿈", "뒤척임"], "rapport_score": 0.55, "last_positive_response": "sleep_monitor"},
+    "bio_data": {"heart_rate": 82, "no_movement_minutes": 0, "fall_detected": false},
+    "env_data": {"time_of_day": "midnight", "weather": "cloudy", "location": "home"},
+    "crisis_flags": {"crisis_utterance": false, "sos_activated": false, "isolation_risk_score": 0.2}
+  },
+  "expected_component": "sleep_monitor",
+  "expected_mode": "score"
+}

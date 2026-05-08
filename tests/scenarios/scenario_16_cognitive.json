@@ -1,0 +1,14 @@
+{
+  "description": "인지 자극 필요 시나리오",
+  "input": {
+    "user_id": "elder_016",
+    "timestamp": "2026-05-08T10:00:00",
+    "emotion_vector": {"sadness": 0.2, "loneliness": 0.3, "anxiety": 0.1, "calm": 0.6, "joy": 0.2},
+    "memory_data": {"recent_topics": ["옛날 노래", "추억"], "rapport_score": 0.8, "last_positive_response": "cognitive_stimulation"},
+    "bio_data": {"heart_rate": 68, "no_movement_minutes": 90, "fall_detected": false},
+    "env_data": {"time_of_day": "morning", "weather": "sunny", "location": "home"},
+    "crisis_flags": {"crisis_utterance": false, "sos_activated": false, "isolation_risk_score": 0.1}
+  },
+  "expected_component": "cognitive_stimulation",
+  "expected_mode": "score"
+}

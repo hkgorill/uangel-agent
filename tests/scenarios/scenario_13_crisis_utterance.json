@@ -1,0 +1,14 @@
+{
+  "description": "위기 발화 감지 시나리오",
+  "input": {
+    "user_id": "elder_013",
+    "timestamp": "2026-05-08T20:00:00",
+    "emotion_vector": {"sadness": 0.9, "loneliness": 0.8, "anxiety": 0.7, "calm": 0.0, "joy": 0.0},
+    "memory_data": {"recent_topics": ["외로움", "힘듦"], "rapport_score": 0.4, "last_positive_response": null},
+    "bio_data": {"heart_rate": 80, "no_movement_minutes": 30, "fall_detected": false},
+    "env_data": {"time_of_day": "evening", "weather": "cloudy", "location": "home"},
+    "crisis_flags": {"crisis_utterance": true, "sos_activated": false, "isolation_risk_score": 0.7}
+  },
+  "expected_component": "escalation",
+  "expected_mode": "rule"
+}

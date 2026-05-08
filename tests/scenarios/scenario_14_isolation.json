@@ -1,0 +1,14 @@
+{
+  "description": "고독사 위험 시나리오",
+  "input": {
+    "user_id": "elder_014",
+    "timestamp": "2026-05-08T14:00:00",
+    "emotion_vector": {"sadness": 0.6, "loneliness": 0.85, "anxiety": 0.4, "calm": 0.1, "joy": 0.0},
+    "memory_data": {"recent_topics": [], "rapport_score": 0.3, "last_positive_response": null},
+    "bio_data": {"heart_rate": 68, "no_movement_minutes": 180, "fall_detected": false},
+    "env_data": {"time_of_day": "afternoon", "weather": "cloudy", "location": "home"},
+    "crisis_flags": {"crisis_utterance": false, "sos_activated": false, "isolation_risk_score": 0.95}
+  },
+  "expected_component": "isolation_risk",
+  "expected_mode": "rule"
+}

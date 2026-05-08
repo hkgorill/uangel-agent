@@ -1,9 +1,12 @@
 """FastAPI 서버 — 외부 컨텍스트 수신 및 오케스트레이터 실행."""
 
-from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel, field_validator
-from typing import Optional, Literal
+import os
 import logging
+from typing import Optional, Literal
+
+from fastapi import FastAPI, HTTPException, Security, Depends
+from fastapi.security import APIKeyHeader
+from pydantic import BaseModel
 
 from data.db import init_db, get_session, InterventionLog, FeedbackLog, UserProfile
 from components import REGISTRY
@@ -13,16 +16,30 @@ from core.feedback_engine import FeedbackEngine, REACTION_SCORES
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+# API Key 인증 설정
+_API_SECRET_KEY = os.getenv("API_SECRET_KEY", "dev-secret-change-in-production")
+_api_key_header = APIKeyHeader(name="X-API-Key", auto_error=False)
+
+
+def verify_api_key(key: str = Security(_api_key_header)):
+    """X-API-Key 헤더 검증. 개발 환경(dev-secret-*)은 항상 허용."""
+    if key == _API_SECRET_KEY or _API_SECRET_KEY.startswith("dev-secret"):
+        return key
+    raise HTTPException(status_code=403, detail="유효하지 않은 API 키")
+
+
 app = FastAPI(
     title="유엔젤 에이전틱 AI API",
     description="고령자 특화 멀티에이전트 오케스트레이션 엔진",
-    version="1.0.0",
+    version="2.0.0",
 )
 
 init_db()
 orchestrator = Orchestrator(REGISTRY)
 feedback_engine = FeedbackEngine(orchestrator.score_engine)
 
+
+# ── 요청 스키마 ────────────────────────────────────────────
 
 class EmotionVector(BaseModel):
     sadness: float = 0.0
@@ -65,7 +82,33 @@ class InterventionRequest(BaseModel):
     crisis_flags: CrisisFlags = CrisisFlags()
 
 
-@app.post("/intervention")
+class FeedbackRequest(BaseModel):
+    log_id: int
+    user_id: str
+    component: str
+    reaction: Literal[
+        "continued_conversation",
+        "positive_emotion_change",
+        "no_response",
+        "negative_reaction",
+    ]
+
+
+# ── 엔드포인트 ────────────────────────────────────────────
+
+@app.get("/status")
+def status():
+    """시스템 상태 확인 (인증 불필요)."""
+    return {
+        "status": "ok",
+        "version": "2.0.0",
+        "components_loaded": len(REGISTRY),
+        "mock_api": os.getenv("USE_MOCK_API", "true").lower() != "false",
+        "component_names": list(REGISTRY.keys()),
+    }
+
+
+@app.post("/intervention", dependencies=[Depends(verify_api_key)])
 def intervention(req: InterventionRequest):
     """외부 컨텍스트 수신 → 오케스트레이터 실행 → 결과 반환."""
     context = req.model_dump()
@@ -75,7 +118,6 @@ def intervention(req: InterventionRequest):
         logger.error("Orchestrator error: %s", e)
         raise HTTPException(status_code=500, detail=str(e))
 
-    # 개입 이력 저장 후 log_id 반환
     with get_session() as session:
         log = InterventionLog(
             user_id=req.user_id,
@@ -90,19 +132,7 @@ def intervention(req: InterventionRequest):
     return result
 
 
-class FeedbackRequest(BaseModel):
-    log_id: int
-    user_id: str
-    component: str
-    reaction: Literal[
-        "continued_conversation",
-        "positive_emotion_change",
-        "no_response",
-        "negative_reaction",
-    ]
-
-
-@app.post("/feedback")
+@app.post("/feedback", dependencies=[Depends(verify_api_key)])
 def feedback(req: FeedbackRequest):
     """개입 결과 피드백 수신 → 가중치 자동 갱신.
 
@@ -112,7 +142,6 @@ def feedback(req: FeedbackRequest):
     - no_response             : 무반응 (0.0)
     - negative_reaction       : 거부·부정 반응 (-1.0)
     """
-    # log_id 유효성 확인
     with get_session() as session:
         log = session.query(InterventionLog).filter_by(id=req.log_id).first()
         if not log:
@@ -124,18 +153,17 @@ def feedback(req: FeedbackRequest):
         component=req.component,
         reaction=req.reaction,
     )
-    score = REACTION_SCORES[req.reaction]
     return {
         "ok": True,
         "log_id": req.log_id,
         "component": req.component,
         "reaction": req.reaction,
-        "score": score,
+        "score": REACTION_SCORES[req.reaction],
         "weights": orchestrator.score_engine.weights,
     }
 
 
-@app.get("/feedback")
+@app.get("/feedback", dependencies=[Depends(verify_api_key)])
 def feedback_logs(user_id: Optional[str] = None, limit: int = 20):
     """피드백 이력 조회."""
     with get_session() as session:
@@ -157,7 +185,7 @@ def feedback_logs(user_id: Optional[str] = None, limit: int = 20):
         ]
 
 
-@app.get("/profile/{user_id}")
+@app.get("/profile/{user_id}", dependencies=[Depends(verify_api_key)])
 def profile(user_id: str):
     """어르신별 개인화 가중치 프로파일 조회."""
     with get_session() as session:
@@ -171,17 +199,7 @@ def profile(user_id: str):
         }
 
 
-@app.get("/status")
-def status():
-    """시스템 상태 확인."""
-    return {
-        "status": "ok",
-        "components_loaded": len(REGISTRY),
-        "component_names": list(REGISTRY.keys()),
-    }
-
-
-@app.get("/logs")
+@app.get("/logs", dependencies=[Depends(verify_api_key)])
 def logs(user_id: Optional[str] = None, limit: int = 20):
     """최근 개입 이력 조회."""
     with get_session() as session:

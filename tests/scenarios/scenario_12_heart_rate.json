@@ -1,0 +1,14 @@
+{
+  "description": "심박수 이상(저하) 시나리오",
+  "input": {
+    "user_id": "elder_012",
+    "timestamp": "2026-05-08T09:00:00",
+    "emotion_vector": {"sadness": 0.2, "loneliness": 0.2, "anxiety": 0.3, "calm": 0.5, "joy": 0.1},
+    "memory_data": {"recent_topics": ["약"], "rapport_score": 0.6, "last_positive_response": null},
+    "bio_data": {"heart_rate": 35, "no_movement_minutes": 10, "fall_detected": false},
+    "env_data": {"time_of_day": "morning", "weather": "sunny", "location": "home"},
+    "crisis_flags": {"crisis_utterance": false, "sos_activated": false, "isolation_risk_score": 0.1}
+  },
+  "expected_component": "anomaly_detection",
+  "expected_mode": "rule"
+}

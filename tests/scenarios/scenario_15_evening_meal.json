@@ -1,0 +1,14 @@
+{
+  "description": "저녁 식사 미감지 시나리오",
+  "input": {
+    "user_id": "elder_015",
+    "timestamp": "2026-05-08T18:30:00",
+    "emotion_vector": {"sadness": 0.3, "loneliness": 0.2, "anxiety": 0.2, "calm": 0.5, "joy": 0.1},
+    "memory_data": {"recent_topics": ["저녁", "밥", "식욕"], "rapport_score": 0.6, "last_positive_response": null},
+    "bio_data": {"heart_rate": 70, "no_movement_minutes": 40, "fall_detected": false},
+    "env_data": {"time_of_day": "evening", "weather": "sunny", "location": "home"},
+    "crisis_flags": {"crisis_utterance": false, "sos_activated": false, "isolation_risk_score": 0.1}
+  },
+  "expected_component": "meal_guide",
+  "expected_mode": "score"
+}

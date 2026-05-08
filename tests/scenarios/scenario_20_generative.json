@@ -1,0 +1,14 @@
+{
+  "description": "높은 라포·감정 강도 생성 대화 시나리오",
+  "input": {
+    "user_id": "elder_020",
+    "timestamp": "2026-05-08T14:00:00",
+    "emotion_vector": {"sadness": 0.6, "loneliness": 0.5, "anxiety": 0.6, "calm": 0.2, "joy": 0.1},
+    "memory_data": {"recent_topics": ["병원", "건강"], "rapport_score": 0.92, "last_positive_response": "generative_agent"},
+    "bio_data": {"heart_rate": 78, "no_movement_minutes": 25, "fall_detected": false},
+    "env_data": {"time_of_day": "afternoon", "weather": "sunny", "location": "home"},
+    "crisis_flags": {"crisis_utterance": false, "sos_activated": false, "isolation_risk_score": 0.2}
+  },
+  "expected_component": "generative_agent",
+  "expected_mode": "score"
+}

@@ -1,0 +1,14 @@
+{
+  "description": "SOS 긴급 신호 시나리오",
+  "input": {
+    "user_id": "elder_011",
+    "timestamp": "2026-05-08T11:00:00",
+    "emotion_vector": {"sadness": 0.5, "loneliness": 0.3, "anxiety": 0.9, "calm": 0.0, "joy": 0.0},
+    "memory_data": {"recent_topics": [], "rapport_score": 0.5, "last_positive_response": null},
+    "bio_data": {"heart_rate": 110, "no_movement_minutes": 5, "fall_detected": false},
+    "env_data": {"time_of_day": "morning", "weather": "sunny", "location": "home"},
+    "crisis_flags": {"crisis_utterance": false, "sos_activated": true, "isolation_risk_score": 0.2}
+  },
+  "expected_component": "escalation",
+  "expected_mode": "rule"
+}
