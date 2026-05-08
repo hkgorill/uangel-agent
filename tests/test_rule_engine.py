@@ -22,45 +22,62 @@ re = RuleEngine()
 def test_fall_detected():
     ctx = _base_context()
     ctx["bio_data"]["fall_detected"] = True
-    assert re.evaluate(ctx) == "anomaly_detection"
+    result = re.evaluate(ctx)
+    assert "anomaly_detection" in result
+    assert "escalation" in result
+    assert "family_contact" in result
 
 
 def test_no_movement():
     ctx = _base_context()
     ctx["bio_data"]["no_movement_minutes"] = 250
-    assert re.evaluate(ctx) == "anomaly_detection"
+    result = re.evaluate(ctx)
+    assert "anomaly_detection" in result
+    assert "escalation" in result
 
 
 def test_crisis_utterance():
     ctx = _base_context()
     ctx["crisis_flags"]["crisis_utterance"] = True
-    assert re.evaluate(ctx) == "escalation"
+    result = re.evaluate(ctx)
+    assert "escalation" in result
+    assert "empathy_dialog" in result
+    assert "family_contact" in result
 
 
 def test_heart_rate_high():
     ctx = _base_context()
     ctx["bio_data"]["heart_rate"] = 130
-    assert re.evaluate(ctx) == "anomaly_detection"
+    result = re.evaluate(ctx)
+    assert "anomaly_detection" in result
+    assert "escalation" in result
 
 
 def test_heart_rate_low():
     ctx = _base_context()
     ctx["bio_data"]["heart_rate"] = 35
-    assert re.evaluate(ctx) == "anomaly_detection"
+    result = re.evaluate(ctx)
+    assert "anomaly_detection" in result
+    assert "escalation" in result
 
 
 def test_isolation_risk():
     ctx = _base_context()
     ctx["crisis_flags"]["isolation_risk_score"] = 0.95
-    assert re.evaluate(ctx) == "isolation_risk"
+    result = re.evaluate(ctx)
+    assert "isolation_risk" in result
+    assert "escalation" in result
+    assert "family_contact" in result
 
 
 def test_sos():
     ctx = _base_context()
     ctx["crisis_flags"]["sos_activated"] = True
-    assert re.evaluate(ctx) == "escalation"
+    result = re.evaluate(ctx)
+    assert "escalation" in result
+    assert "family_contact" in result
 
 
 def test_no_crisis():
     ctx = _base_context()
-    assert re.evaluate(ctx) is None
+    assert re.evaluate(ctx) == []
